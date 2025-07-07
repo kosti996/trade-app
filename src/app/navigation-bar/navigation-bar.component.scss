@@ -1,0 +1,51 @@
+$background-color: color(srgb 11.8% 13.3% 20%);
+$divider-color: #23263a;
+$border-color: lightblue;
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  max-width: 100rem;
+  margin: auto;
+}
+
+.nav-title {
+  margin: 0;
+  font-weight: 400;
+}
+
+.nav-bar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.search-bar {
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  border: 1px solid $background-color;
+  font-size: 1rem;
+  background: $background-color;
+  color: #fff;
+  min-width: 20rem;
+  outline: none;
+  caret-color: transparent;
+
+  &:focus {
+    border: 1px solid $border-color;
+  }
+}
+
+.profile-icon {
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid $background-color;
+}
+
+.nav-bar-divider {
+  border: none;
+  border-top: 1px solid $divider-color;
+  margin: 0;
+}
