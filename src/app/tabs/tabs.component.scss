@@ -1,31 +1,21 @@
-.tabs-container {
-    margin: auto;
-    max-width: 100rem;
-    padding: 1rem;
-}
+$background-blue: #1976d2;
 
 .tab-btn {
-  display: inline-block;
-  padding: 0.5rem 1.25rem;
-  margin: 0 0.5rem 0 0;
-  background-color: color(srgb 4.31% 5.88% 8.63%);
-  color: #ccc;
-  border: none;
-  border-radius: 999px;
-  text-decoration: none;
-  font-size: 1rem;
-  cursor: pointer;
-  border: 1px solid #23263a;
+    background-color: black;
+    margin-right: 0.5rem;
+    border: 1px solid #23263a;
 }
 
 .tab-btn:hover,
 .tab-btn:focus {
-  background-color: #1976d2;
-  outline: 2px solid #1976d2;
+  background-color: $background-blue;
 }
 
 .tab-btn.active,
 .tab-btn[aria-current="page"] {
-  background-color: #1976d2;
-  color: #fff;
+  background-color: $background-blue;
+}
+
+a.mat-mdc-button.tab-btn {
+  color: white;
 }
