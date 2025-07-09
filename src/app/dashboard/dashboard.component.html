@@ -1,3 +1,51 @@
 <div class="container">
-    <p>dashboard works!</p>
+    <section class="work-queue">
+        <h2 class="table-title">Work Queue</h2>
+        <mat-button-toggle-group [hideSingleSelectionIndicator]="true" class="table-btns">
+            <mat-button-toggle>Assigned to me ({{ workQueue.assignedToMe }})</mat-button-toggle>
+            <mat-button-toggle>Pending Review ({{ workQueue.pendingReview }})</mat-button-toggle>
+            <mat-button-toggle>Referrals ({{ workQueue.referrals }})</mat-button-toggle>
+        </mat-button-toggle-group>
+
+        <table mat-table [dataSource]="workQueue.tasks" class="mat-elevation-z8">
+            <ng-container matColumnDef="originator">
+                <mat-header-cell *matHeaderCellDef>Originator</mat-header-cell>
+                <mat-cell *matCellDef="let task">{{ task.originator }}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="client">
+                <mat-header-cell *matHeaderCellDef>Client</mat-header-cell>
+                <mat-cell *matCellDef="let task">{{ task.client }}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="type">
+                <mat-header-cell *matHeaderCellDef>Type</mat-header-cell>
+                <mat-cell *matCellDef="let task">{{ task.type }}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="status">
+                <mat-header-cell *matHeaderCellDef>Status</mat-header-cell>
+                <mat-cell *matCellDef="let task">
+                    <mat-icon class="status-dot" [ngClass]="task.status">circle</mat-icon>
+                    {{ task.status }}
+                </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="created">
+                <mat-header-cell *matHeaderCellDef>Created</mat-header-cell>
+                <mat-cell *matCellDef="let task">{{ task.created | date:'short' }}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="actions" class="mat-column-actions">
+                <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+                <mat-cell *matCellDef="let task">
+                    <button mat-icon-button>
+                        <mat-icon>more_vert</mat-icon>
+                    </button>
+                </mat-cell>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </table>
+    </section>
 </div>

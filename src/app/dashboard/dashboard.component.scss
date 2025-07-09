@@ -1,0 +1,77 @@
+$background-color: color(srgb 11.8% 13.3% 20%);
+$background-blue: #1976d2;
+$divider-color: #23263a;
+
+.work-queue,
+.mat-mdc-table {
+    background-color: $background-color;
+    padding: 1rem;
+}
+
+.work-queue {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.table-title {
+    font-weight: 400;
+    margin-top: 0;
+}
+
+mat-button-toggle {
+    background-color: black;
+    color: white;
+}
+
+mat-button-toggle:hover,
+mat-button-toggle:focus {
+    background-color: $background-blue;
+}
+
+.mat-button-toggle-appearance-standard.mat-button-toggle-checked {
+    color: white;
+    background-color: $background-blue;
+}
+
+::ng-deep .mat-mdc-table {
+    padding: 16px 0 0 0 !important;
+}
+
+::ng-deep .mat-mdc-row>*,
+.mat-mdc-header-cell {
+    color: white;
+    border-bottom: 1px solid $divider-color;
+}
+
+::ng-deep .mat-mdc-row:nth-child(even),
+.mat-mdc-header-cell {
+    background-color: #242b3c !important;
+}
+
+::ng-deep .mat-mdc-icon-button {
+    color: white !important;
+}
+
+.mat-column-actions {
+    justify-content: center;
+}
+
+.status-dot {
+    margin-right: 8px;
+}
+
+.status-dot.New {
+    color: #007ACC;
+    /* Blue */
+}
+
+.status-dot.Pending {
+    color: #FFD700;
+    /* Yellow */
+}
+
+.status-dot.Completed {
+    color: #4CAF50;
+    /* Green */
+}
