@@ -21,7 +21,6 @@ export class DashboardComponent {
     { status: 'Completed' }
   ];
 
-
   workQueue = {
     assignedToMe: 12,
     pendingReview: 8,
@@ -51,7 +50,7 @@ export class DashboardComponent {
     'Environmental regulations in CA'
   ];
 
-  onClick() {
+  openTaskDetails(task: any) {
     console.log('Task clicked!');
   }
 

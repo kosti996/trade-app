@@ -39,7 +39,7 @@
             <ng-container matColumnDef="actions" class="mat-column-actions">
                 <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
                 <mat-cell *matCellDef="let task">
-                    <button mat-icon-button>
+                    <button mat-icon-button (click)="openTaskDetails(task)">
                         <mat-icon>more_vert</mat-icon>
                     </button>
                 </mat-cell>

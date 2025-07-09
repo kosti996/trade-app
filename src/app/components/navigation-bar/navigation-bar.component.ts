@@ -16,5 +16,6 @@ export class NavigationBarComponent {
   onSearch(event: Event) {
     const target = event.target as HTMLInputElement | null;
     const value = target?.value ?? '';
+    console.log('Search value:', value);
   }
 }
